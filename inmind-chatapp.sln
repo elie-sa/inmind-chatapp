@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inmind-chatapp", "inmind-chatapp\inmind-chatapp.csproj", "{4DE0FBD1-0112-473E-A5E7-B8837A9CE4C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "ClientApp\ClientApp.csproj", "{61103637-D6DE-4247-A17E-D0D1D6068C01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DE0FBD1-0112-473E-A5E7-B8837A9CE4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE0FBD1-0112-473E-A5E7-B8837A9CE4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE0FBD1-0112-473E-A5E7-B8837A9CE4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE0FBD1-0112-473E-A5E7-B8837A9CE4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61103637-D6DE-4247-A17E-D0D1D6068C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61103637-D6DE-4247-A17E-D0D1D6068C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61103637-D6DE-4247-A17E-D0D1D6068C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61103637-D6DE-4247-A17E-D0D1D6068C01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

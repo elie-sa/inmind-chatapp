@@ -1,0 +1,6 @@
+@inmind_chatapp_client_HostAddress = http://localhost:5262
+
+GET {{inmind_chatapp_client_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
