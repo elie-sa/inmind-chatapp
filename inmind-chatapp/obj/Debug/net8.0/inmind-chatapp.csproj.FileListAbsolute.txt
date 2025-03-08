@@ -49,3 +49,4 @@ C:\Users\Esawm\RiderProjects\inmind-chatapp\inmind-chatapp\obj\Debug\net8.0\refi
 C:\Users\Esawm\RiderProjects\inmind-chatapp\inmind-chatapp\obj\Debug\net8.0\inmind-chatapp.pdb
 C:\Users\Esawm\RiderProjects\inmind-chatapp\inmind-chatapp\obj\Debug\net8.0\inmind-chatapp.genruntimeconfig.cache
 C:\Users\Esawm\RiderProjects\inmind-chatapp\inmind-chatapp\obj\Debug\net8.0\ref\inmind-chatapp.dll
+C:\Users\Esawm\RiderProjects\inmind-chatapp\inmind-chatapp\obj\Debug\net8.0\inmind-chatapp.sourcelink.json

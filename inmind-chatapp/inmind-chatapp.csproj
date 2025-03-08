@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.67.0" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="9.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>

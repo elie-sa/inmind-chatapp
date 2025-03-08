@@ -37,3 +37,4 @@ C:\Users\Esawm\RiderProjects\inmind-chatapp\ClientApp\obj\Debug\net8.0\refint\Cl
 C:\Users\Esawm\RiderProjects\inmind-chatapp\ClientApp\obj\Debug\net8.0\ClientApp.pdb
 C:\Users\Esawm\RiderProjects\inmind-chatapp\ClientApp\obj\Debug\net8.0\ClientApp.genruntimeconfig.cache
 C:\Users\Esawm\RiderProjects\inmind-chatapp\ClientApp\obj\Debug\net8.0\ref\ClientApp.dll
+C:\Users\Esawm\RiderProjects\inmind-chatapp\ClientApp\obj\Debug\net8.0\ClientApp.sourcelink.json
