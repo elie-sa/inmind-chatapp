@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ChatService;
+
+message ChatMessage {
+  string fromUser = 1;
+  string toUser = 2;
+  string message = 3;
+  int64 timestamp = 4;
+}
+
+message ChatHistoryRequest {
+  string username = 1;
+}
+
+message ChatHistoryResponse {
+  repeated ChatMessage messages = 1;
+}
+
+service ChatService {
+  rpc GetChatHistory(ChatHistoryRequest) returns (ChatHistoryResponse);
+}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("inmind-chatapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9ebb6789710e8ee9eee411377c67d3bb08c0c3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea71977dae57ebd7c5a268bf173934a69b74b5d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("inmind-chatapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("inmind-chatapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

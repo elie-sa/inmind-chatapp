@@ -1,13 +1,20 @@
 using System.Collections.Concurrent;
+using inmind_chatapp_client.DbContext;
+using inmind_chatapp_client.Models;
 using Microsoft.AspNetCore.SignalR;
 
 namespace inmind_chatapp_client;
 
 public class ChatHub : Hub
 {
-    // used a concurrent dictionary because it is thread-safe
     private static readonly ConcurrentDictionary<string, string> ConnectedUsers = new();
+    private IAppDbContext _context;
 
+    public ChatHub(IAppDbContext context)
+    {
+        _context = context;
+    }
+    
     public override async Task OnConnectedAsync()
     {
         var username = Context.GetHttpContext()?.Request.Query["username"];
@@ -41,6 +48,17 @@ public class ChatHub : Hub
     {
         if (ConnectedUsers.TryGetValue(toUser, out var connectionId))
         {
+            var chatMessage = new Message
+            {
+                FromUser = fromUser,
+                ToUser = toUser,
+                MessageText = message,
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()
+            };
+
+            _context.Messages.Add(chatMessage);
+            await _context.SaveChangesAsync();
+
             await Clients.Client(connectionId).SendAsync("ReceiveMessage", fromUser, message);
         }
         else

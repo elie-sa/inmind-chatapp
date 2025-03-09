@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.SignalR.Client;
+﻿using Microsoft.AspNetCore.SignalR.Client;
+using Grpc.Net.Client;
+using ChatService;
 
 class Program
 {
@@ -12,7 +12,11 @@ class Program
             Console.Write("Enter your username: ");
             username = Console.ReadLine()?.Trim() ?? "";
         } while (string.IsNullOrEmpty(username));
+        
+        using var grpcChannel = GrpcChannel.ForAddress("http://localhost:5263");
+        var grpcClient = new ChatService.ChatService.ChatServiceClient(grpcChannel);
 
+        // im running signalR and gRPC on different ports since signalR need HTTP 1 while gRPC depends on HTTP 2
         var connection = new HubConnectionBuilder()
             .WithUrl($"http://localhost:5262/chatHub?username={username}")
             .Build();
@@ -30,6 +34,29 @@ class Program
 
         await connection.StartAsync();
         Console.WriteLine($"Connected as {username}. Type messages below:");
+
+        try
+        {
+            var chatHistoryResponse = await grpcClient.GetChatHistoryAsync(new ChatHistoryRequest { Username = username });
+
+            if (chatHistoryResponse.Messages.Count == 0)
+            {
+                Console.WriteLine("No chat history found.");
+            }
+            else
+            {
+                Console.WriteLine("\n--- Chat History ---");
+                foreach (var message in chatHistoryResponse.Messages)
+                {
+                    Console.WriteLine($"[{DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).UtcDateTime}] {message.FromUser} -> {message.ToUser}: {message.Message}");
+                }
+                Console.WriteLine("\n--------------------");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching chat history: {ex.Message}");
+        }
 
         while (true)
         {
